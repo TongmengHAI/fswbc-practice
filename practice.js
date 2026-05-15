@@ -1,49 +1,17 @@
-// data types
-// global variables
-var name = "John"; // string
-let age = 30; // number
-const isStudent = true; // boolean
+const form = document.getElementById("loginForm");
+const message = document.getElementById("message");
 
-var students = ["Alice", "Bob", "Charlie"]; // array
-var person = { // object
-    // key : value pairs
-    name: "John",
-    age: 30,
-    isStudent: true
-};
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
 
-var person = [
-    {
-        name: "John",
-        age: 30,
-        isStudent: true
-    },
-    {
-        name: "Alice",
-        age: 25,
-        isStudent: false
-    }
-];
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
-
-// functions
-function greet() {
-    console.log("Hello, " + name + "!");
-}
-
-function add(a, b) {
-    return a + b;
-}
-
-// greet(); // Call the function
-console.log(add(5, 10));
-
-const sumFunction = (a, b) => {
-    return a + b;
-}; // Arrow function
-
-
-
-
-
-
+  if (email === "" || password === "") {
+    message.textContent = "Please fill in all fields.";
+    message.style.color = "red";
+  } else {
+    message.textContent = "Login form submitted successfully!";
+    message.style.color = "green";
+  }
+});

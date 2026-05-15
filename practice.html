@@ -1,16 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./practice.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Login Form</title>
+    <link rel="stylesheet" href="practice.css" />
 </head>
 <body>
-    
-    
 
+  <div class="login-container">
 
-    <script src="./practice.js"></script>
+    <!-- Left Login Form -->
+    <div class="form-section">
+      <h2 class="logo">Solara</h2>
+
+      <h1>Sign in</h1>
+      <p class="small-text">
+        Don't have an account?
+        <a href="#">Create now</a>
+      </p>
+
+      <form id="loginForm">
+        <label>Email</label>
+        <input type="email" id="email" placeholder="example@gmail.com" />
+
+        <label>Password</label>
+        <input type="password" id="password" placeholder="Enter password" />
+
+        <div class="form-row">
+          <label>
+            <input type="checkbox" />
+            Remember me
+          </label>
+          <a href="#">Forgot Password?</a>
+        </div>
+
+        <button type="submit">Sign in</button>
+
+        <p id="message"></p>
+      </form>
+
+      <div class="divider">
+        <span></span>
+        <p>OR</p>
+        <span></span>
+      </div>
+
+      <button class="social-btn">Continue with Google</button>
+      <button class="social-btn">Continue with Facebook</button>
+    </div>
+
+    <!-- Right Promotional Section -->
+    <div class="promo-section">
+      <div class="promo-card">
+        <h3>Reach financial goals faster</h3>
+        <p>Manage your spending and savings easily.</p>
+        <button>Learn more</button>
+      </div>
+
+      <h2>Introducing new features</h2>
+      <p>
+        Analyze your business easily and make better decisions.
+      </p>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

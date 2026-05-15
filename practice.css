@@ -1,0 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #e9edf5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main desktop layout */
+.login-container {
+  width: 900px;
+  background: white;
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Left form */
+.form-section {
+  width: 50%;
+  padding: 50px;
+}
+
+.logo {
+  color: #1b5c3e;
+  margin-bottom: 40px;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+.small-text {
+  font-size: 14px;
+  margin-bottom: 25px;
+  color: #666;
+}
+
+a {
+  color: #1b5c3e;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 18px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.form-row label {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.form-row input {
+  width: auto;
+  margin: 0;
+}
+
+button {
+  width: 100%;
+  padding: 13px;
+  background: #1b5c3e;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #14452f;
+}
+
+#message {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 30px 0;
+  color: #999;
+  font-size: 12px;
+}
+
+.divider span {
+  height: 1px;
+  background: #ddd;
+  flex: 1;
+}
+
+.social-btn {
+  background: white;
+  color: #333;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+/* Right section */
+.promo-section {
+  width: 50%;
+  background: #164b34;
+  color: white;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.promo-card {
+  background: white;
+  color: #333;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.promo-card p {
+  margin: 15px 0;
+  color: #666;
+}
+
+/* Tablet responsive */
+@media (max-width: 768px) {
+  body {
+    padding: 40px;
+  }
+
+  .login-container {
+    width: 420px;
+  }
+
+  .form-section {
+    width: 100%;
+    padding: 45px;
+  }
+
+  .promo-section {
+    display: none;
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+  body {
+    padding: 20px;
+    align-items: flex-start;
+  }
+
+  .login-container {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .form-section {
+    padding: 30px 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  button {
+    padding: 14px;
+  }
+}
