@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="km">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Battambang:wght@100;300;400;700;900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Khmer&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Siemreap&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Battambang", system-ui;
+    }
+
+    body {
+        background-color: #f4f7f6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+    }
+
+    .container {
+        background: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        /* សម្រាប់ Desktop */
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        text-align: center;
+        color: #333;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        color: #666;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        background-color: #218838;
+    }
+
+    /* Responsive Mobile */
+    @media (max-width: 480px) {
+        .container {
+            padding: 20px;
+        }
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <form id="registerForm">
+            <h2>បង្កើតគណនី</h2>
+            <div class="form-group">
+                <label for="fullname">ឈ្មោះពេញ</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">អ៊ីមែល</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">ពាក្យសម្ងាត់</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">បញ្ជាក់ពាក្យសម្ងាត់</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+
+            <button type="submit">ចុះឈ្មោះ</button>
+            <div id="message">
+
+            </div>
+        </form>
+    </div>
+
+</body>
+<script>
+    const registerForm = document.getElementById("registerForm")
+    const message = document.getElementById("message")
+    registerForm.addEventListener("submit", (e) => {
+        e.preventDefault()
+        // get element from html
+        let fullName = document.getElementById("fullname")
+        let email = document.getElementById("email")
+        let password = document.getElementById("password")
+        let confirmPassword = document.getElementById("confirmPassword")
+
+        // get value from input box
+        let valueFullName = fullName.value.trim()
+        let valueEmail = email.value.trim()
+        let valuePassword = password.value.trim()
+        let valueconfirmPassword = confirmPassword.value.trim() 
+        
+        // check infor user
+        if (valueFullName === "" || valueEmail === "" || valuePassword === "" || valueconfirmPassword === "") {
+            message.innerHTML = `<p style="color:red; margin-top: 15px;">* សូមបំព័ត៌មានឲ្យបានគ្រប់ប្រអប់ សូមពិនិត្យម្តងទៀត!</p>`
+        } else if(valuePassword !== valueconfirmPassword){
+            message.innerHTML = `<p style="color:red; margin-top: 15px;">* ពាក្យសម្ងាត់មិនដូចគ្នាទេ សូមពិនិត្យម្តងទៀត!</p>`;
+        }
+         else{
+            message.innerHTML = `<p style="color:#1f963b; margin-top: 15px;">សូមអបអរសាទរ!</p>`
+        }
+        console.log(valueFullName, valueEmail, valuePassword, valueconfirmPassword)
+
+        // clear value
+        fullName.value = ""
+        email.value = ""
+        password.value = ""
+        confirmPassword.value = ""
+    })
+</script>
+
+</html>
